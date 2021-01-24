@@ -1,0 +1,15 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <!---->
+            <div *ngFor="let image of images" class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div>
+                        <a ><img class="card-img-top datita" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{image.cropped_picture}}" data-holder-rendered=" true "></a>
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+    </div>
+</div>
