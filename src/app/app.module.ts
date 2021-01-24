@@ -9,11 +9,13 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './services/auth.service';
+import { ImageDetailsComponent } from './image-details/image-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GridViewComponent
+    GridViewComponent,
+    ImageDetailsComponent
 
   ],
   imports: [

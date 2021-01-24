@@ -32,9 +32,13 @@ export class AuthService {
     })
   }*/
 
-  getImages(): Observable<any[]> {
+  getImages(page:number): Observable<any[]> {
     //return this.http.get<Hero[]>(this.heroesUrl);
-    return this.http.get<any>('http://interview.agileengine.com/images')
+    return this.http.get<any>(`http://interview.agileengine.com/images?page=${page}`)
+  }
+
+  getImageWID(id:number): Observable<any[]> {
+    return this.http.get<any>(`http://interview.agileengine.com/images/${id}`)
   }
 
 }
