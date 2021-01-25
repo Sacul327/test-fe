@@ -3,7 +3,7 @@
         <div class="row">
             <!---->
             <div *ngFor="let image of images" class="col-md-4">
-                <a routerLink="/image-details/{{image.id}}">
+                <a type="button" data-toggle="modal" data-target="#exampleModalCenter" (click)="getImageById(image.id)">
                 <div class="card mb-4 shadow-sm">
                     <div>
                         <a ><img class="card-img-top datita" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="{{image.cropped_picture}}" data-holder-rendered=" true "></a>
@@ -15,26 +15,27 @@
         </div>
     </div>
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal fade center-m" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered m-size" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="exampleModalLongTitle">+ Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCloseModal()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <img class="max-w" src="{{moreDetails.full_picture}}" alt="">
         </div>
+        <div class="modal-body">
+            <div><label >Author: {{moreDetails.author}}</label></div>
+            <div><label >Camera Model: {{moreDetails.camera}}</label></div>
+            <div><label >{{moreDetails.tags}}</label></div>
+          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

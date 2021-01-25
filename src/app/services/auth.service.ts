@@ -9,10 +9,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getToken(){
-    return  this.http.post<any>('http://interview.agileengine.com/auth',  { "apiKey": "23567b218376f79d9415" }).subscribe(data => {
+  getToken(): Observable<any[]>{
+    /*return  this.http.post<any>('http://interview.agileengine.com/auth',  { "apiKey": "23567b218376f79d9415" }).subscribe(data => {
       localStorage.setItem('token',data.token)
-  })
+  })*/
+    return  this.http.post<any>('http://interview.agileengine.com/auth',  { "apiKey": "23567b218376f79d9415" })
   }
 
   hasToken(){
