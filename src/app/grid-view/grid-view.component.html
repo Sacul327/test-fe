@@ -35,7 +35,8 @@
             <div><label >{{moreDetails.tags}}</label></div>
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-outline-secondary" (click)="copyToClipboard(moreDetails.full_picture)" value="click to copy" >share Img</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
